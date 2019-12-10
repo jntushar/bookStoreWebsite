@@ -1,0 +1,171 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% static 'images' as baseUrl %}
+
+{% block title%} Contact Us {% endblock %}
+
+
+{% block css %}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background: #F0F0F0;
+}
+
+.contact-us{
+  width: 370px;
+  background: #ffffff;
+  padding: 40px;
+  margin: 90px auto;
+  border-radius: 30px;
+  position: relative;
+}
+
+.title h1{
+  color: #535274;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form,
+.form-items{
+  width: 100%;
+}
+
+.form-items .input{
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 15px 40px;
+  box-sizing: border-box;
+  background: #ebeef1;
+  border: 0px;
+  outline: none;
+  border-radius: 30px;
+}
+
+.form-items .input.message{
+  height: 125px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  padding: 15px 15px;
+  resize: none;
+}
+
+.btnn{
+  background: #827ffe;
+  text-align: center;
+  color: #fff;
+  padding: 12px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.btn .fas{
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.form-items{
+  position: relative;
+}
+
+.form-items .fas{
+  position: absolute;
+  top: 18px;
+  left: 15px;
+  color: #9a99aa;
+}
+
+.social-icons{
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  width: 200px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+}
+
+.social-icons div{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+
+.social-icons div .fab{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+}
+
+.social-icons div.facebook{
+  background: #5178d9;
+}
+
+.social-icons div.twitter{
+  background: #41caf6;
+}
+
+.social-icons div.instagram{
+  background: #e95950;
+}
+
+{% endblock %}
+
+{% block body %}
+<br>
+<div>
+        {% for message in messages %}
+        <h3> {{message}} </h3>
+        {% endfor %}
+</div>
+<div class="contact-us">
+    <div class="title">
+      <h1><b>Contact us</b></h1>
+    </div>
+
+  <form action="/contactus/" method="post">
+    {% csrf_token %}
+    <div>
+      <div class="form-items">
+        <input type="text" class="input" id="name" name="name" placeholder="Name">
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="form-items">
+        <input type="text" class="input" id="email" name="email" placeholder="Email">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="form-items">
+        <textarea class="input message" id="message" name="message" cols="30" rows="10" placeholder="Message..."></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btnn">Submit<i class="fas fa-arrow-right"></i></button>
+      </div>
+    </div>
+  </form>
+
+  <div class="social-icons">
+    <div class="facebook">
+      <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+    </div>
+    <div class="twitter">
+      <a href="https://twitter.com/home"><i class="fab fa-twitter"></i></a>
+    </div>
+    <div class="instagram">
+      <a href="https://aboutme.google.com/u/0/"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

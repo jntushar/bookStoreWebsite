@@ -1,0 +1,283 @@
+{% load static %}
+{% static "images" as baseUrl%}
+
+<html>
+<head>
+<title>{% block title%} {% endblock %}</title>
+    <!-- favicon -->
+    <link rel="icon" href="{% static 'iconn.png'%}" type="image/icon type">
+
+
+
+    <!--Navigation Bar Bootstrap-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+    <!-- Bootstrap for Login -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="/style.css">
+
+     <!-- Bootstrap for registration form -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap for footer -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Bootstrap for Books -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+/* CSS for Navigation Bar */
+
+.custom-navbar{
+    box-shadow: 10px 10px 10px #eee;
+    z-index:;background-color: #fff;
+}
+.nav-link{
+    color: #f7204e!important;
+}
+.custom-toggler.navbar-toggler {
+    border-color: rgb(247,32,78);
+}
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(247,32,78, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+.custom-toggler .navbar-toggler-icon{
+    width: 18px!important;
+}
+.custom-toggler:hover{
+    border-color: rgb(255,255,255);
+    background-color: #f76a88;
+}
+.navbar-toggler-icon:hover{
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+#logo_custom{
+    margin-top: -6px;
+}
+@media only screen and (max-width: 760px) { #logo_custom{width: 40%;}}
+
+
+/* CSS for Footer */
+
+.header-font {
+  font-family: "Josefin Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #fd1506;
+}
+.fa-facebook{
+    color:#3b5998;
+}
+.fa-linkedin{
+    color:#0077B5;
+}
+.fa-twitter{
+    color:#4099FF;
+}
+.fa-google{
+    color:#d34836;
+}
+.bg-primary {
+ background-color: #2f3542 !important;
+}
+
+.bg-circle
+{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  padding: 14px 4px;
+  color: #ececec;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.bg-circle-outline
+{
+  width: 50px;
+  height: 50px;
+  color:smoke;
+  padding: 8px 2px;
+  border: 2px solid;
+  border-color: smoke;
+  border-radius: 50%;
+}
+
+
+.bg-circle a, a:hover, .media a:focus
+{
+  text-decoration: none !important;
+  outline: none;
+  color: #ececec;
+}
+.bg-circle-outline a, a:hover, .media a:focus
+{
+  text-decoration: none !important;
+  outline: none;
+  color: #ececec;
+}
+.footer {
+	background: #EDEFF1;
+	height: auto;
+	padding-bottom: 30px;
+	position: relative;
+	width: 100%;
+	border-bottom: 1px solid #CCCCCC;
+	border-top: 1px solid #DDDDDD;
+}
+.footer p {
+	margin: 0;
+}
+.footer img {
+	max-width: 100%;
+}
+.footer h3 {
+	border-bottom: 1px solid #BAC1C8;
+	color: #54697E;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 27px;
+	padding: 40px 0 10px;
+	text-transform: uppercase;
+}
+.footer ul {
+	font-size: 13px;
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	margin-top: 15px;
+	color: #7F8C8D;
+}
+.footer ul li a {
+	padding: 0 0 5px 0;
+	display: block;
+}
+.footer a {
+	color: #78828D
+}
+
+{% block css %}  {% endblock %}
+</style>
+</head>
+
+<body>
+<!--Navigation Bar-->
+<nav class="navbar fixed-top navbar-expand-md custom-navbar navbar-dark">
+                         <img class="navbar-brand" src="{% static 'book.png' %}" id="logo_custom" width="10%"  alt="logo">
+                            <button class="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                                <span class="navbar-toggler-icon "></span>
+                            </button>
+                              <div class="collapse navbar-collapse " id="collapsibleNavbar">
+                                  <ul class="navbar-nav m-auto ">
+                                      {% if user.is_authenticated %}
+                                    <li class="nav-link"><b>Hello, {{user.first_name}}</b></li>
+                                      {% endif %}
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="/"><b>Home</b></a>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href=""><b>Categories</b></a>
+                                    </li>
+                                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="#">Fiction</a>
+                                             <a class="dropdown-item" href="#">Humanities</a>
+                                          <a class="dropdown-item" href="#">Lifestyle</a>
+                                     </div>
+                                    <!--<li class="nav-item">
+                                      <a class="nav-link" href="/newarrivals/"><b>New Arrival</b></a>
+                                    </li>
+                                    -->
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="/blog/"><b>Blog</b></a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="/contactus/"><b>Contact Us</b></a>
+                                    </li>
+                                      {% if user.is_authenticated %}
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="/accounts/logout/"><b>Logout</b></a>
+                                    </li>
+                                      {% else %}
+                                      <li class="nav-item">
+                                       <a class="nav-link" href="/accounts/login/"><b>Login</b></a>
+                                      </li>
+                                      {% endif %}
+                                  </ul>
+                                  <form class="form-inline ml-auto" method="post" action="/search/">
+                                      {% csrf_token%}
+                                    <input class="form-control mr-sm-2" type="text" name="searched_book" placeholder="Search by Title">
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                  </form>
+                              </div>
+                <!--
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categories</a></li>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Fiction</a>
+                    <a class="dropdown-item" href="#">Humanities</a>
+                    <a class="dropdown-item" href="#">Lifestyle</a>
+                     <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                -->
+</nav>
+{% block body %} {% endblock %}
+
+<!-- Footer -->
+<footer>
+     <div class="container-fluid bg-primary py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+            <div class="row py-0">
+          <div class="col-sm-1 hidden-md-down">
+              <a class="bg-circle bg-info" href="#">
+                <i class="fa fa-2x fa-fw fa-address-card" aria-hidden="true "></i>
+              </a>
+            </div>
+            <div class="col-sm-11 text-white">
+                <div><h4>&nbsp;Contact</h4>
+                    <p><span class="header-font">&nbsp;Book</span>Geeks.com</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+          <div class="d-inline-block">
+            <div class="bg-circle-outline d-inline-block" style="background-color:#3b5998">
+              <a href="https://www.facebook.com/"><i class="fa fa-2x fa-fw fa-facebook text-white"></i>
+		</a>
+            </div>
+            <div class="bg-circle-outline d-inline-block" style="background-color:#4099FF">
+              <a href="https://twitter.com/">
+                <i class="fa fa-2x fa-fw fa-twitter text-white"></i></a>
+            </div>
+
+            <div class="bg-circle-outline d-inline-block" style="background-color:#0077B5">
+              <a href="https://www.linkedin.com/company/">
+                <i class="fa fa-2x fa-fw fa-linkedin text-white"></i></a>
+            </div>
+            <div class="bg-circle-outline d-inline-block" style="background-color:#d34836">
+              <a href="https://www.google.com/">
+                <i class="fa fa-2x fa-fw fa-google text-white"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</footer>
+    <!--/.footer-->
+<p class="text-center"> Copyright ©  BookGeeks.com Plugin 2014. All right reserved. </p>
+ <!--/.footer-bottom-->
+
+
+</body>
+</html>

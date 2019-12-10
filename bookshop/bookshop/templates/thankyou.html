@@ -1,0 +1,18 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% static 'images' as baseUrl %}
+
+{% block title%} ThankYou {% endblock %}
+
+{% block css %}
+
+.h3{
+      text-align: center;
+}
+
+{% endblock %}
+
+{% block body %}<br><br><br><br><br><br><br><br><br><br>
+<h3>Thankyou <b><i>{{user.first_name}}</i></b> for Shopping with us<br>Please give your feedback <a href="/contactus/">here</a></h3>
+<br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

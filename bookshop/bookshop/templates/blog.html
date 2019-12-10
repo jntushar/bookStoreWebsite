@@ -1,0 +1,85 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% static 'images' as baseUrl %}
+
+{% block title%} Blog {% endblock %}
+
+{% block css %}
+
+
+
+.containerr {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+}
+
+/* Columns */
+.left-column {
+  width: 65%;
+  position: relative;
+}
+.right-column {
+  width: 35%;
+  margin-top: 60px;
+}
+/* Left Column */
+.left-column img {
+  width: 45%;
+  position: absolute;
+  left: 80;
+  top: 70;
+}
+/* Product Description */
+.product-description {
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+.product-description span {
+  font-size: 12px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.product-description h1 {
+  font-weight: 300;
+  font-size: 52px;
+  color: #43484D;
+  letter-spacing: -2px;
+}
+.product-description p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;
+}
+
+{% endblock %}
+{% block body %}
+
+<br><br>
+{% for blog in blogs %}
+<main class="containerr">
+
+  <div class="left-column">
+    <img data-image="black" src="{{blog.Image.url}}" alt="">
+  </div>
+
+
+  <!-- Right Column -->
+  <div class="right-column">
+
+    <!-- Product Description -->
+    <div class="product-description">
+      <span>{{ blog.Date }}</span>
+      <h1>{{ blog.Title }}</h1>
+      <p>{{ blog.Description }}</p>
+    </div>
+  </div>
+</main>
+<br><br>
+{% endfor %}
+
+{% endblock %}

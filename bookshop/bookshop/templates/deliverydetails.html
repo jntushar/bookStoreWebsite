@@ -1,0 +1,110 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% static 'images' as baseUrl %}
+
+{% block title%} Delivery Details {% endblock %}
+
+{% block css %}
+body {
+     background: #fff;
+    background-size: cover;
+}
+
+*[role="form"] {
+    max-width: 530px;
+    padding: 15px;
+    margin: 0 auto;
+    border-radius: 0.3em;
+    background-color: #f2f2f2;
+}
+
+*[role="form"] h2 {
+    font-family: 'Open Sans' , sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 5%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+
+{% endblock %}
+
+{% block body %}
+ <!--Bootstrap for DeliveryDetails-->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<br><br><br>
+{% if user.is_authenticated %}
+<div class="container">
+            <form class="form-horizontal" role="form" action="/deliverydetails/" method="post">
+                {% csrf_token %}
+                <h2>Delivery Details</h2>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">First Name:</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="{{user.first_name}} {{user.last_name}}" class="form-control" autofocus>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Phone:</label>
+                    <div class="col-sm-9">
+                        <input type="text" placeholder="Phone" class="form-control" name="phone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Email: </label>
+                    <div class="col-sm-9">
+                        <input type="email" id="email" value="{{user.email}}" class="form-control" name= "email">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-sm-3 control-label">Pincode: </label>
+                    <div class="col-sm-9">
+                        <input type="text" placeholder="Pincode" class="form-control" name= "pincode">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">House No.:  </label>
+                    <div class="col-sm-9">
+                        <input type="text"  class="form-control" name= "house_no">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-sm-3 control-label">Area:  </label>
+                    <div class="col-sm-9">
+                        <input type="text"  class="form-control" name= "area">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-sm-3 control-label">Landmark:  </label>
+                    <div class="col-sm-9">
+                        <input type="text"  class="form-control" placeholder="E.g. Near AIIMS Flyover, Behind Regal Cinema, etc." name= "landmark">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-sm-3 control-label">City:  </label>
+                    <div class="col-sm-9">
+                        <input type="text"  class="form-control" name= "city">
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label class="col-sm-3 control-label">State:  </label>
+                    <div class="col-sm-9">
+                        <input type="text"  class="form-control" name= "state">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Confirm</button>
+            </form>
+        </div>
+{% else %}
+<br><br>
+<h3>OOps! You are not Logged in. <a href="/accounts/login/">CLICK HERE !</a> </h3><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
+{% endif%}
+<br>
+{% endblock %}
